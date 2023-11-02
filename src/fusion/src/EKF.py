@@ -8,7 +8,8 @@ class ExtendedKalmanFilter:
         #   only pose -> np.array([x, y, yaw])
         #   with velocity -> np.array([x, y, yaw, vx, vy, vyaw])
         #   etc...
-        self.pose = ???
+        # define state with pose and velocity
+        self.pose = np.zeros(6)
         
         # Transition matrix
         self.A = np.identity(3)

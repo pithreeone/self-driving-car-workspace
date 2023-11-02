@@ -54,13 +54,13 @@ CMAKE_BINARY_DIR = /root/catkin_ws/build
 
 # The main recursive "all" target.
 all: gtest/all
-all: sdc_hw4/HW4_Student/src/fusion/all
+all: fusion/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
-preinstall: sdc_hw4/HW4_Student/src/fusion/preinstall
+preinstall: fusion/preinstall
 
 .PHONY : preinstall
 
@@ -71,9 +71,41 @@ clean: CMakeFiles/clean_test_results.dir/clean
 clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
-clean: sdc_hw4/HW4_Student/src/fusion/clean
+clean: fusion/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory fusion
+
+# Recursive "all" directory target.
+fusion/all:
+
+.PHONY : fusion/all
+
+# Recursive "preinstall" directory target.
+fusion/preinstall:
+
+.PHONY : fusion/preinstall
+
+# Recursive "clean" directory target.
+fusion/clean: fusion/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+fusion/clean: fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+fusion/clean: fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+fusion/clean: fusion/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+fusion/clean: fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+fusion/clean: fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+fusion/clean: fusion/CMakeFiles/roscpp_generate_messages_py.dir/clean
+fusion/clean: fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+fusion/clean: fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+fusion/clean: fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+fusion/clean: fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+fusion/clean: fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+fusion/clean: fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+fusion/clean: fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+fusion/clean: fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+
+.PHONY : fusion/clean
 
 #=============================================================================
 # Directory level rules for directory gtest
@@ -131,38 +163,6 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest_main.dir/clean
 gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 
 .PHONY : gtest/googletest/clean
-
-#=============================================================================
-# Directory level rules for directory sdc_hw4/HW4_Student/src/fusion
-
-# Recursive "all" directory target.
-sdc_hw4/HW4_Student/src/fusion/all:
-
-.PHONY : sdc_hw4/HW4_Student/src/fusion/all
-
-# Recursive "preinstall" directory target.
-sdc_hw4/HW4_Student/src/fusion/preinstall:
-
-.PHONY : sdc_hw4/HW4_Student/src/fusion/preinstall
-
-# Recursive "clean" directory target.
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-sdc_hw4/HW4_Student/src/fusion/clean: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
-
-.PHONY : sdc_hw4/HW4_Student/src/fusion/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir
@@ -409,409 +409,409 @@ gtest/googletest/CMakeFiles/gtest.dir/clean:
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir
+# Target rules for target fusion/CMakeFiles/std_msgs_generate_messages_py.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/build
+fusion/CMakeFiles/std_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_py.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_py.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_py.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_py"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/all
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/std_msgs_generate_messages_py.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/std_msgs_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_py: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+std_msgs_generate_messages_py: fusion/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 .PHONY : std_msgs_generate_messages_py
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+fusion/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_py.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir
+# Target rules for target fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_nodejs"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_nodejs: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+std_msgs_generate_messages_nodejs: fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 .PHONY : std_msgs_generate_messages_nodejs
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir
+# Target rules for target fusion/CMakeFiles/roscpp_generate_messages_cpp.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_cpp"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_cpp: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+roscpp_generate_messages_cpp: fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 .PHONY : roscpp_generate_messages_cpp
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir
+# Target rules for target fusion/CMakeFiles/roscpp_generate_messages_eus.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/build
+fusion/CMakeFiles/roscpp_generate_messages_eus.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_eus.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_eus.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_eus.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_eus.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_eus"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/all
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/roscpp_generate_messages_eus.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/roscpp_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_eus: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+roscpp_generate_messages_eus: fusion/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 .PHONY : roscpp_generate_messages_eus
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+fusion/CMakeFiles/roscpp_generate_messages_eus.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_eus.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_eus.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir
+# Target rules for target fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_nodejs"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+rosgraph_msgs_generate_messages_nodejs: fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 .PHONY : rosgraph_msgs_generate_messages_nodejs
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir
+# Target rules for target fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_lisp"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_lisp: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+std_msgs_generate_messages_lisp: fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 .PHONY : std_msgs_generate_messages_lisp
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir
+# Target rules for target fusion/CMakeFiles/roscpp_generate_messages_py.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/build
+fusion/CMakeFiles/roscpp_generate_messages_py.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_py.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_py.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_py.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_py.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_py"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/all
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/roscpp_generate_messages_py.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/roscpp_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_py: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/rule
+roscpp_generate_messages_py: fusion/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 .PHONY : roscpp_generate_messages_py
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_py.dir/clean
+fusion/CMakeFiles/roscpp_generate_messages_py.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_py.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_py.dir/clean
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_py.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir
+# Target rules for target fusion/CMakeFiles/std_msgs_generate_messages_eus.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_eus"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_eus: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+std_msgs_generate_messages_eus: fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 .PHONY : std_msgs_generate_messages_eus
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir
+# Target rules for target fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_nodejs"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_nodejs: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+roscpp_generate_messages_nodejs: fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 .PHONY : roscpp_generate_messages_nodejs
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
+# Target rules for target fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_cpp"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+rosgraph_msgs_generate_messages_cpp: fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 .PHONY : rosgraph_msgs_generate_messages_cpp
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir
+# Target rules for target fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_cpp"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_cpp: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+std_msgs_generate_messages_cpp: fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 .PHONY : std_msgs_generate_messages_cpp
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+.PHONY : fusion/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
+# Target rules for target fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_eus"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+rosgraph_msgs_generate_messages_eus: fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 
 .PHONY : rosgraph_msgs_generate_messages_eus
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
+# Target rules for target fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_lisp"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+rosgraph_msgs_generate_messages_lisp: fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 .PHONY : rosgraph_msgs_generate_messages_lisp
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir
+# Target rules for target fusion/CMakeFiles/roscpp_generate_messages_lisp.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_lisp"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_lisp: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+roscpp_generate_messages_lisp: fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 .PHONY : roscpp_generate_messages_lisp
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+.PHONY : fusion/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir
+# Target rules for target fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir
 
 # All Build rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/catkin_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_py"
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/CMakeFiles 0
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_py: sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+rosgraph_msgs_generate_messages_py: fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 .PHONY : rosgraph_msgs_generate_messages_py
 
 # clean rule for target.
-sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
-.PHONY : sdc_hw4/HW4_Student/src/fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+.PHONY : fusion/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

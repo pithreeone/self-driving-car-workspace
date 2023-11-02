@@ -131,7 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/root/catkin_ws/build/gtest/cmake_install.cmake")
-  include("/root/catkin_ws/build/sdc_hw4/HW4_Student/src/fusion/cmake_install.cmake")
+  include("/root/catkin_ws/build/fusion/cmake_install.cmake")
 
 endif()
 

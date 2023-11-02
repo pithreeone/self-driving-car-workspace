@@ -1,2 +1,2 @@
-sdc_hw4/HW4_Student/src/fusion
+fusion
 -DCATKIN_DEVEL_PREFIX=/root/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/root/catkin_ws/install -G Unix Makefiles

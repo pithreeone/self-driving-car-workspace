@@ -32,11 +32,11 @@ class Fusion:
         predPose = Odometry()
         predPose.header.frame_id = 'origin'
         # change to the state x and state y from EKF
-        predPose.pose.pose.position.x = ???
-        predPose.pose.pose.position.y = ???
+        predPose.pose.pose.position.x = self.EKF.pose[0]
+        predPose.pose.pose.position.y = self.EKF.pose[1]
         
         # Change to the state yaw from EKF
-        quaternion = quaternion_from_euler(0, 0, ???)
+        quaternion = quaternion_from_euler(0, 0, self.EKF.pose[2])
         predPose.pose.pose.orientation.x = quaternion[0]
         predPose.pose.pose.orientation.y = quaternion[1]
         predPose.pose.pose.orientation.z = quaternion[2]
