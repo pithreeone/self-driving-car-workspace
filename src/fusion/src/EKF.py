@@ -8,22 +8,21 @@ class ExtendedKalmanFilter:
         #   only pose -> np.array([x, y, yaw])
         #   with velocity -> np.array([x, y, yaw, vx, vy, vyaw])
         #   etc...
-        # define state with pose and velocity
-        self.pose = np.zeros(6)
+        # define state with pose
+        self.pose = np.zeros(3)
         
         # Transition matrix
-        self.A = np.identity(6)
-        self.B = [[1,0,0],[0,1,0],[0,0,1],[1,0,0],[0,1,0],[0,0,1]]
-        
+        self.A = np.identity(3)
+        self.B = np.identity(3)
         
         # State covariance matrix
-        self.S = np.identity(6) * 1
+        self.S = np.identity(3) * 1
         
         # Observation matrix
-        self.C = np.zeros((3,6))
+        self.C = np.zeros((3,3))
         
         # State transition error
-        self.R = np.identity(6) * 1
+        self.R = np.identity(3) * 1
         
         # Measurement error
         self.Q = np.identity(3) * 0.00000001
@@ -38,12 +37,20 @@ class ExtendedKalmanFilter:
     def predict(self, u):
         # Base on the Kalman Filter design in Assignment 3
         # Implement a linear or nonlinear motion model for the control input
-        # Calculate Jacobian matrix of the model as self.A
-        
-        self.A[0,0] = self.A[1,1] = self.A[2,2] = 1
-        self.A[3,3] = self.A[4,4] = self.A[5,5] = 0
+        # Calculate Jacobian matrix of the model
+        yaw = self.pose[2]
+
+        self.B[0,0] = cos(yaw); self.B[0,1] = -sin(yaw); self.B[0,2] = 0
+        self.B[1,0] = sin(yaw); self.B[1,1] = cos(yaw); self.B[1,2] = 0
+        self.B[2,0] = 0; self.B[2,1] = 0; self.B[2,2] = 1
+
         self.pose = self.A.dot(self.pose) + np.matmul(self.B, u)
-        self.S = self.A @ self.S @ np.transpose(self.A) + self.R
+        G = np.identity(3)
+
+        G[0,0] = 1; G[0,1] = 0; G[0,2] = -u[0]*sin(yaw) - u[1]*cos(yaw)
+        G[1,0] = 0; G[1,1] = 1; G[1,2] = u[0]*cos(yaw) - u[1]*sin(yaw)
+        G[2,0] = 0; G[2,1] = 0; G[2,2] = 1
+        self.S = G @ self.S @ np.transpose(G) + self.R
     
         
     def update(self, z):
@@ -51,9 +58,7 @@ class ExtendedKalmanFilter:
         # Implement a linear or nonlinear observation matrix for the measurement input
         # Calculate Jacobian matrix of the matrix as self.C
         
-        self.C = [[1,0,0,0,0,0],
-                  [0,1,0,0,0,0],
-                  [0,0,1,0,0,0]]
+        self.C[0,0] = self.C[1,1] = self.C[2,2] = 1
         
         den = self.C @ self.S @ np.transpose(self.C) + self.Q
         den = np.linalg.inv(den)

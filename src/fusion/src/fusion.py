@@ -47,7 +47,7 @@ class Fusion:
         predPose.pose.pose.orientation.w = quaternion[3]
         
         # Change to the covariance matrix of [x, y, yaw] from EKF
-        predPose.pose.covariance = tuple(self.EKF.S.ravel().tolist())
+        # predPose.pose.covariance = tuple(self.EKF.S.ravel().tolist())
                                     
         self.posePub.publish(predPose)
     
@@ -74,15 +74,22 @@ class Fusion:
         diff_x = odom_x - self.prev_pose[0]
         diff_y = odom_y - self.prev_pose[1]
         diff_yaw =  odom_yaw - self.prev_pose[2]
+
+        # transfer to local frame
+        diff_x_local = diff_x * cos(odom_yaw) + diff_y * sin(odom_yaw)
+        diff_y_local = diff_x * -sin(odom_yaw) + diff_y * cos(odom_yaw)
+        diff_yaw_local = diff_yaw
+
         # set the current pose to previous pose
         self.prev_pose[0] = odom_x
         self.prev_pose[1] = odom_y
         self.prev_pose[2] = odom_yaw
-
+        
+        # set the control-term u
         control = np.zeros(3)
-        control[0] = diff_x
-        control[1] = diff_y
-        control[2] = diff_yaw
+        control[0] = diff_x_local
+        control[1] = diff_y_local
+        control[2] = diff_yaw_local
         
         if not self.initial:
             self.initial = True
