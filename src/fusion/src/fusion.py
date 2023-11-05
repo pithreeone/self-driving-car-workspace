@@ -47,7 +47,13 @@ class Fusion:
         predPose.pose.pose.orientation.w = quaternion[3]
         
         # Change to the covariance matrix of [x, y, yaw] from EKF
-        # predPose.pose.covariance = tuple(self.EKF.S.ravel().tolist())
+        predPose.pose.covariance =  \
+        [self.EKF.S[0,0],self.EKF.S[0,1],0,0,0,0, \
+         self.EKF.S[1,0],self.EKF.S[1,1],0,0,0,0, \
+         0,0,0,0,0,0,               \
+         0,0,0,0,0,0,               \
+         0,0,0,0,0,0,               \
+         0,0,0,0,0,self.EKF.S[2,2]] \
                                     
         self.posePub.publish(predPose)
     
@@ -61,6 +67,7 @@ class Fusion:
         _, _, odom_yaw = euler_from_quaternion(odom_quaternion)
         odom_covariance = np.array(data.pose.covariance).reshape(6, 6)
         
+        # # TA-HINT
         # Design the control of EKF state from radar odometry data
         # The data is in global frame, you may need to find a way to convert it into local frame
         # Ex. 
@@ -86,24 +93,11 @@ class Fusion:
         self.prev_pose[2] = odom_yaw
         
         # set the control-term u
-        control = np.zeros(3)
-        control[0] = diff_x_local
-        control[1] = diff_y_local
-        control[2] = diff_yaw_local
-        
+        control = np.array([diff_x_local, diff_y_local, diff_yaw_local])
+
         if not self.initial:
             self.initial = True
         else:
-            # Update error covriance
-            # self.EKF.R = [[odom_covariance[0,0],0,0,0,0,0],
-            #               [0,odom_covariance[1,1],0,0,0,0],
-            #               [0,0,odom_covariance[2,2],0,0,0],
-            #               [0,0,0,0,0,0],
-            #               [0,0,0,0,0,0],
-            #               [0,0,0,0,0,0]]
-            # self.EKF.R[0,0] = odom_covariance[0,0]
-            # self.EKF.R[1,1] = odom_covariance[1,1]
-            # self.EKF.R[2,2] = odom_covariance[2,2]
             self.EKF.predict(u = control)
 
         self.predictPublish()
@@ -114,6 +108,7 @@ class Fusion:
         gps_y = data.pose.pose.position.y
         gps_covariance = np.array(data.pose.covariance).reshape(6, 6)
         
+        # # TA-HINT
         # Design the measurement of EKF state from GPS data
         # Ex. 
         #     Use GPS directly
@@ -121,14 +116,10 @@ class Fusion:
         #     etc.
         
         if not self.initial:
-            # self.initial = ExtendedKalmanFilter(gps_x, gps_y)
             self.initial = True
             self.EKF.set_initial_pose(gps_x, gps_y, 0)
         else:
-            # Update error covriance
-            self.EKF.Q = [[gps_covariance[0,0],0,0],
-                          [0,gps_covariance[1,1],0],
-                          [0,0,gps_covariance[0,0]]]
+            # calculate the approximate yaw by displacement direction 
             ang_approx = atan2(gps_y - self.prev_gps[1], gps_x - self.prev_gps[0])
             measurement = [gps_x, gps_y, ang_approx]
             self.EKF.update(z = measurement)
